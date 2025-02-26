@@ -1,0 +1,9 @@
+@use 'text';
+@use 'surface';
+@use 'line';
+
+@mixin colors-dark {
+    @include text.colors-text-dark;
+    @include surface.colors-surface-dark;
+    @include line.colors-line-dark;
+}

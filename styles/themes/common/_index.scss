@@ -1,0 +1,9 @@
+@use 'colors';
+@use 'numbers';
+@use 'typography';
+
+@mixin theme-common {
+  @include colors.colors-source();
+  @include numbers.numbers-source();
+  @include typography.fonts-source();
+}

@@ -1,0 +1,44 @@
+@mixin variables {
+  --display-font-family: var(--font-family-extended);
+  --display-font-weight: 600;
+
+  --display-1-font-size: var(--size-12-0);
+  --display-2-font-size: var(--size-10-0);
+  --display-3-font-size: var(--size-8-0);
+  --display-4-font-size: var(--size-6-0);
+
+  --display-1-font: var(--display-font-weight) var(--display-1-font-size) /
+    var(--font-line-height) var(--display-font-family);
+  --display-2-font: var(--display-font-weight) var(--display-2-font-size) /
+    var(--font-line-height) var(--display-font-family);
+  --display-3-font: var(--display-font-weight) var(--display-3-font-size) /
+    var(--font-line-height) var(--display-font-family);
+  --display-4-font: var(--display-font-weight) var(--display-4-font-size) /
+    var(--font-line-height) var(--display-font-family);
+
+  --header-font-family: var(--font-family-normal);
+  --header-font-weight: 600;
+
+  --header-1-font-size: var(--size-6-0);
+  --header-2-font-size: var(--size-5-0);
+
+  --header-1-font: var(--header-font-weight) var(--header-1-font-size) /
+    var(--font-line-height) var(--header-font-family);
+  --header-2-font: var(--header-font-weight) var(--header-2-font-size) /
+    var(--font-line-height) var(--header-font-family);
+
+
+  --subheader-font-family: var(--font-family-normal);
+  --subheader-font-weight: 600;
+
+  --subheader-1-font-size: var(--size-4-5);
+  --subheader-2-font-size: var(--size-4-0);
+  --subheader-3-font-size: var(--size-3-5);
+
+  --subheader-1-font: var(--subheader-font-weight) var(--subheader-1-font-size) /
+    var(--font-line-height) var(--subheader-font-family);
+  --subheader-2-font: var(--subheader-font-weight) var(--subheader-2-font-size) /
+    var(--font-line-height) var(--subheader-font-family);
+  --subheader-3-font: var(--subheader-font-weight) var(--subheader-3-font-size) /
+    var(--font-line-height) var(--subheader-font-family);
+}

@@ -1,0 +1,9 @@
+@use 'sizes';
+@use 'spacing';
+@use 'radius';
+
+@mixin numbers-source {
+  @include sizes.variables;
+  @include spacing.variables;
+  @include radius.variables;
+}

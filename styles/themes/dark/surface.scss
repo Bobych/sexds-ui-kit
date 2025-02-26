@@ -1,0 +1,97 @@
+@mixin colors-surface-dark {
+  --surface-primary-a-h2: var(--accent-primary-650);
+  --surface-primary-a-h1: var(--accent-primary-650);
+  --surface-primary-a: var(--accent-primary-600);
+  --surface-primary-a-l1: var(--accent-primary-600);
+  --surface-primary-a-l2: var(--accent-primary-600);
+
+  --surface-primary-transluent-a: var(--accent-primary-transluent-10);
+  --surface-primary-transluent-a-l1: var(--accent-primary-transluent-10);
+  --surface-primary-transluent-a-l2: var(--accent-primary-transluent-10);
+  --surface-primary-transluent-a-l3: var(--accent-primary-transluent-5);
+  --surface-primary-transluent-a-l4: var(--accent-primary-transluent-5);
+  --surface-primary-transluent-a-l5: var(--accent-primary-transluent-5);
+  --surface-primary-transluent-a-l6: var(--accent-primary-transluent-5);
+
+  --surface-standart-a: var(--shades-white-1000);
+  --surface-standart-a-l1: var(--shades-white-900);
+  --surface-standart-a-l2: var(--shades-white-700);
+  --surface-standart-a-l3: var(--shades-white-500);
+  --surface-standart-a-l4: var(--shades-white-300);
+
+  --surface-standart-transluent-a: var(--shades-white-transluent-70);
+  --surface-standart-transluent-a-l1: var(--shades-white-transluent-50);
+  --surface-standart-transluent-a-l2: var(--shades-white-transluent-30);
+  --surface-standart-transluent-a-l3: var(--shades-white-transluent-20);
+  --surface-standart-transluent-a-l4: var(--shades-white-transluent-15);
+  --surface-standart-transluent-a-l5: var(--shades-white-transluent-10);
+  --surface-standart-transluent-a-l6: var(--shades-white-transluent-5);
+
+  --surface-invert-a: var(--shades-black-1000);
+  --surface-invert-a-l1: var(--shades-black-850);
+  --surface-invert-a-l2: var(--shades-black-700);
+  --surface-invert-a-l3: var(--shades-black-600);
+  --surface-invert-a-l4: var(--shades-black-400);
+
+  --surface-invert-transluent-a: var(--shades-black-transluent-70);
+  --surface-invert-transluent-a-l1: var(--shades-black-transluent-50);
+  --surface-invert-transluent-a-l2: var(--shades-black-transluent-30);
+  --surface-invert-transluent-a-l3: var(--shades-black-transluent-20);
+  --surface-invert-transluent-a-l4: var(--shades-black-transluent-15);
+  --surface-invert-transluent-a-l5: var(--shades-black-transluent-10);
+  --surface-invert-transluent-a-l6: var(--shades-black-transluent-5);
+
+  --surface-system-danger-contrast: var(--system-red-650);
+  --surface-system-danger-a: var(--system-red-600);
+  --surface-system-danger-light: var(--system-red-transluent-10);
+  --surface-system-danger-light-contrast: var(--system-red-transluent-20);
+  --surface-system-danger-medium: var(--system-red-transluent-30);
+  --surface-system-danger-medium-contrast: var(--system-red-transluent-40);
+  --surface-system-danger-heavy: var(--system-red-transluent-50);
+  --surface-system-danger-heavy-contrast: var(--system-red-transluent-60);
+
+  --surface-system-warning-contrast: var(--system-yellow-650);
+  --surface-system-warning-a: var(--system-yellow-600);
+  --surface-system-warning-light: var(--system-yellow-transluent-10);
+  --surface-system-warning-light-contrast: var(--system-yellow-transluent-20);
+  --surface-system-warning-medium: var(--system-yellow-transluent-30);
+  --surface-system-warning-medium-contrast: var(--system-yellow-transluent-40);
+  --surface-system-warning-heavy: var(--system-yellow-transluent-50);
+  --surface-system-warning-heavy-contrast: var(--system-yellow-transluent-60);
+
+  --surface-system-success-contrast: var(--system-green-650);
+  --surface-system-success-a: var(--system-green-600);
+  --surface-system-success-light: var(--system-green-transluent-10);
+  --surface-system-success-light-contrast: var(--system-green-transluent-20);
+  --surface-system-success-medium: var(--system-green-transluent-30);
+  --surface-system-success-medium-contrast: var(--system-green-transluent-40);
+  --surface-system-success-heavy: var(--system-green-transluent-50);
+  --surface-system-success-heavy-contrast: var(--system-green-transluent-60);
+
+  --surface-system-info-contrast: var(--system-blue-650);
+  --surface-system-info-a: var(--system-blue-600);
+  --surface-system-info-light: var(--system-blue-transluent-10);
+  --surface-system-info-light-contrast: var(--system-blue-transluent-20);
+  --surface-system-info-medium: var(--system-blue-transluent-30);
+  --surface-system-info-medium-contrast: var(--system-blue-transluent-40);
+  --surface-system-info-heavy: var(--system-blue-transluent-50);
+  --surface-system-info-heavy-contrast: var(--system-blue-transluent-60);
+
+  --surface-system-moment-contrast: var(--system-purple-650);
+  --surface-system-moment-a: var(--system-purple-600);
+  --surface-system-moment-light: var(--system-purple-transluent-10);
+  --surface-system-moment-light-contrast: var(--system-purple-transluent-20);
+  --surface-system-moment-medium: var(--system-purple-transluent-30);
+  --surface-system-moment-medium-contrast: var(--system-purple-transluent-40);
+  --surface-system-moment-heavy: var(--system-purple-transluent-50);
+  --surface-system-moment-heavy-contrast: var(--system-purple-transluent-60);
+
+  --surface-system-misc-contrast: var(--shades-gray-650);
+  --surface-system-misc-a: var(--shades-gray-600);
+  --surface-system-misc-light: var(--shades-gray-transluent-10);
+  --surface-system-misc-light-contrast: var(--shades-gray-transluent-15);
+  --surface-system-misc-medium: var(--shades-gray-transluent-20);
+  --surface-system-misc-medium-contrast: var(--shades-gray-transluent-30);
+  --surface-system-misc-heavy: var(--shades-gray-transluent-50);
+  --surface-system-misc-heavy-contrast: var(--shades-gray-transluent-70);
+}

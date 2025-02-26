@@ -1,0 +1,9 @@
+@use 'text';
+@use 'surface';
+@use 'line';
+
+@mixin colors-light {
+  @include text.colors-text-light;
+  @include surface.colors-surface-light;
+  @include line.colors-line-light;
+}

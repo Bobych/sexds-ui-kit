@@ -1,0 +1,9 @@
+@use 'accent';
+@use 'shades';
+@use 'system';
+
+@mixin colors-source {
+  @include accent.variables;
+  @include shades.variables;
+  @include system.variables;
+}

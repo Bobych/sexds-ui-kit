@@ -1,0 +1,15 @@
+@use 'head';
+@use 'text';
+@use 'extra';
+
+@mixin fonts-source {
+  --font-family-normal: 'Non Bureau Normal', 'Inter', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+  --font-family-extended: 'Non Bureau Extended', 'Inter', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+  --font-line-height: 1.1;
+
+  @include head.variables;
+  @include text.variables;
+  @include extra.variables;
+
+  font: var(--body-1-font);
+}

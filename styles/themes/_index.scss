@@ -1,0 +1,12 @@
+@forward 'common';
+
+@use 'dark';
+@use 'light';
+
+@mixin theme-dark {
+  @include dark.colors-dark();
+}
+
+@mixin theme-light {
+  @include light.colors-light();
+}
