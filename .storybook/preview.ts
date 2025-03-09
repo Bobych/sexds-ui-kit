@@ -5,22 +5,17 @@ import '../styles/styles.scss';
 
 const preview: Preview = {
   parameters: {
+    backgrounds: {
+      values: [
+        { name: 'Light', value: '#ececec' },
+        { name: 'Dark', value: '#383838' }
+      ],
+      default: 'light'
+    },
     controls: {
       matchers: {
         color: /(background|color)$/i,
         date: /Date$/i,
-      },
-    },
-  },
-  globalTypes: {
-    theme: {
-      name: 'Theme',
-      description: 'Global theme for components',
-      toolbar: {
-        icon: 'circlehollow',
-        items: ['light', 'dark'],
-        title: 'Theme',
-        dynamicTitle: true,
       },
     },
   },

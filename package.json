@@ -6,8 +6,8 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
-    "storybook:dev": "storybook dev -p 6006",
-    "storybook:build": "storybook build"
+    "sb:dev": "storybook dev -p 6006",
+    "sb:build": "storybook build"
   },
   "dependencies": {
     "@bem-react/core": "^5.1.0",
