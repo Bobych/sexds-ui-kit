@@ -1,20 +1,20 @@
 @mixin colors-line-dark {
-  --line-primary-a-h1: var(--accent-primary-transluent-15);
+  --line-primary-h1: var(--accent-primary-transluent-15);
   --line-primary-a: var(--accent-primary-transluent-10);
-  --line-primary-a-l1: var(--accent-primary-transluent-5);
+  --line-primary-l1: var(--accent-primary-transluent-5);
 
-  --line-standart-a-h1: var(--shades-white-transluent-15);
+  --line-standart-h1: var(--shades-white-transluent-15);
   --line-standart-a: var(--shades-white-transluent-10);
-  --line-standart-a-l1: var(--shades-white-transluent-5);
+  --line-standart-l1: var(--shades-white-transluent-5);
 
-  --line-invert-a-h1: var(--shades-black-transluent-15);
+  --line-invert-h1: var(--shades-black-transluent-15);
   --line-invert-a: var(--shades-black-transluent-10);
-  --line-invert-a-l1: var(--shades-black-transluent-5);
+  --line-invert-l1: var(--shades-black-transluent-5);
 
-  --line-system-danger-a: var(--system-red-transluent-50);
-  --line-system-warning-a: var(--system-yellow-transluent-50);
-  --line-system-success-a: var(--system-green-transluent-50);
-  --line-system-info-a: var(--system-blue-transluent-50);
-  --line-system-moment-a: var(--system-purple-transluent-50);
+  --line-system-danger-a: var(--system-red-transluent-20);
+  --line-system-warning-a: var(--system-yellow-transluent-20);
+  --line-system-success-a: var(--system-green-transluent-20);
+  --line-system-info-a: var(--system-blue-transluent-20);
+  --line-system-moment-a: var(--system-purple-transluent-20);
   --line-system-misc-a: var(--shades-gray-transluent-30);
 }

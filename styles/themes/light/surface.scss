@@ -1,45 +1,45 @@
 @mixin colors-surface-light {
-  --surface-primary-a-h2: var(--accent-primary-800);
-  --surface-primary-a-h1: var(--accent-primary-700);
+  --surface-primary-h2: var(--accent-primary-800);
+  --surface-primary-h1: var(--accent-primary-700);
   --surface-primary-a: var(--accent-primary-600);
-  --surface-primary-a-l1: var(--accent-primary-500);
-  --surface-primary-a-l2: var(--accent-primary-400);
+  --surface-primary-l1: var(--accent-primary-500);
+  --surface-primary-l2: var(--accent-primary-400);
 
   --surface-primary-transluent-a: var(--accent-primary-transluent-70);
-  --surface-primary-transluent-a-l1: var(--accent-primary-transluent-50);
-  --surface-primary-transluent-a-l2: var(--accent-primary-transluent-30);
-  --surface-primary-transluent-a-l3: var(--accent-primary-transluent-20);
-  --surface-primary-transluent-a-l4: var(--accent-primary-transluent-15);
-  --surface-primary-transluent-a-l5: var(--accent-primary-transluent-10);
-  --surface-primary-transluent-a-l6: var(--accent-primary-transluent-5);
+  --surface-primary-transluent-l1: var(--accent-primary-transluent-50);
+  --surface-primary-transluent-l2: var(--accent-primary-transluent-30);
+  --surface-primary-transluent-l3: var(--accent-primary-transluent-20);
+  --surface-primary-transluent-l4: var(--accent-primary-transluent-15);
+  --surface-primary-transluent-l5: var(--accent-primary-transluent-10);
+  --surface-primary-transluent-l6: var(--accent-primary-transluent-5);
 
   --surface-standart-a: var(--shades-black-1000);
-  --surface-standart-a-l1: var(--shades-black-900);
-  --surface-standart-a-l2: var(--shades-black-700);
-  --surface-standart-a-l3: var(--shades-black-500);
-  --surface-standart-a-l4: var(--shades-black-300);
+  --surface-standart-l1: var(--shades-black-900);
+  --surface-standart-l2: var(--shades-black-700);
+  --surface-standart-l3: var(--shades-black-500);
+  --surface-standart-l4: var(--shades-black-300);
 
   --surface-standart-transluent-a: var(--shades-black-transluent-70);
-  --surface-standart-transluent-a-l1: var(--shades-black-transluent-50);
-  --surface-standart-transluent-a-l2: var(--shades-black-transluent-30);
-  --surface-standart-transluent-a-l3: var(--shades-black-transluent-20);
-  --surface-standart-transluent-a-l4: var(--shades-black-transluent-15);
-  --surface-standart-transluent-a-l5: var(--shades-black-transluent-10);
-  --surface-standart-transluent-a-l6: var(--shades-black-transluent-5);
+  --surface-standart-transluent-l1: var(--shades-black-transluent-50);
+  --surface-standart-transluent-l2: var(--shades-black-transluent-30);
+  --surface-standart-transluent-l3: var(--shades-black-transluent-20);
+  --surface-standart-transluent-l4: var(--shades-black-transluent-15);
+  --surface-standart-transluent-l5: var(--shades-black-transluent-10);
+  --surface-standart-transluent-l6: var(--shades-black-transluent-5);
 
   --surface-invert-a: var(--shades-white-1000);
-  --surface-invert-a-l1: var(--shades-white-850);
-  --surface-invert-a-l2: var(--shades-white-700);
-  --surface-invert-a-l3: var(--shades-white-600);
-  --surface-invert-a-l4: var(--shades-white-400);
+  --surface-invert-l1: var(--shades-white-850);
+  --surface-invert-l2: var(--shades-white-700);
+  --surface-invert-l3: var(--shades-white-600);
+  --surface-invert-l4: var(--shades-white-400);
 
   --surface-invert-transluent-a: var(--shades-white-transluent-70);
-  --surface-invert-transluent-a-l1: var(--shades-white-transluent-50);
-  --surface-invert-transluent-a-l2: var(--shades-white-transluent-30);
-  --surface-invert-transluent-a-l3: var(--shades-white-transluent-20);
-  --surface-invert-transluent-a-l4: var(--shades-white-transluent-15);
-  --surface-invert-transluent-a-l5: var(--shades-white-transluent-10);
-  --surface-invert-transluent-a-l6: var(--shades-white-transluent-5);
+  --surface-invert-transluent-l1: var(--shades-white-transluent-50);
+  --surface-invert-transluent-l2: var(--shades-white-transluent-30);
+  --surface-invert-transluent-l3: var(--shades-white-transluent-20);
+  --surface-invert-transluent-l4: var(--shades-white-transluent-15);
+  --surface-invert-transluent-l5: var(--shades-white-transluent-10);
+  --surface-invert-transluent-l6: var(--shades-white-transluent-5);
 
   --surface-system-danger-contrast: var(--system-red-650);
   --surface-system-danger-a: var(--system-red-600);

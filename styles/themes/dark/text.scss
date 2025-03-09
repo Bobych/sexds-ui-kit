@@ -1,49 +1,49 @@
 @mixin colors-text-dark {
     --text-primary-a: var(--accent-primary-600);
-    --text-primary-a-l1: var(--accent-primary-650);
-    --text-primary-a-l2: var(--accent-primary-700);
-    --text-primary-a-l3: var(--accent-primary-750);
+    --text-primary-l1: var(--accent-primary-650);
+    --text-primary-l2: var(--accent-primary-700);
+    --text-primary-l3: var(--accent-primary-750);
 
     --text-primary-transluent-a: var(--accent-primary-transluent-90);
-    --text-primary-transluent-a-l1: var(--accent-primary-transluent-80);
-    --text-primary-transluent-a-l2: var(--accent-primary-transluent-30);
-    --text-primary-transluent-a-l3: var(--accent-primary-transluent-15);
+    --text-primary-transluent-l1: var(--accent-primary-transluent-80);
+    --text-primary-transluent-l2: var(--accent-primary-transluent-30);
+    --text-primary-transluent-l3: var(--accent-primary-transluent-15);
 
     --text-standart-a: var(--shades-white-900);
-    --text-standart-a-l1: var(--shades-white-700);
-    --text-standart-a-l2: var(--shades-white-500);
-    --text-standart-a-l3: var(--shades-white-300);
+    --text-standart-l1: var(--shades-white-700);
+    --text-standart-l2: var(--shades-white-500);
+    --text-standart-l3: var(--shades-white-300);
 
     --text-standart-transluent-a: var(--shades-white-transluent-90);
-    --text-standart-transluent-a-l1: var(--shades-white-transluent-80);
-    --text-standart-transluent-a-l2: var(--shades-white-transluent-30);
-    --text-standart-transluent-a-l3: var(--shades-white-transluent-10);
+    --text-standart-transluent-l1: var(--shades-white-transluent-80);
+    --text-standart-transluent-l2: var(--shades-white-transluent-30);
+    --text-standart-transluent-l3: var(--shades-white-transluent-10);
 
     --text-invert-a: var(--shades-black-900);
-    --text-invert-a-l1: var(--shades-black-700);
-    --text-invert-a-l2: var(--shades-black-500);
-    --text-invert-a-l3: var(--shades-black-300);
+    --text-invert-l1: var(--shades-black-700);
+    --text-invert-l2: var(--shades-black-500);
+    --text-invert-l3: var(--shades-black-300);
 
     --text-invert-transluent-a: var(--shades-black-transluent-90);
-    --text-invert-transluent-a-l1: var(--shades-black-transluent-80);
-    --text-invert-transluent-a-l2: var(--shades-black-transluent-30);
-    --text-invert-transluent-a-l3: var(--shades-black-transluent-15);
+    --text-invert-transluent-l1: var(--shades-black-transluent-80);
+    --text-invert-transluent-l2: var(--shades-black-transluent-30);
+    --text-invert-transluent-l3: var(--shades-black-transluent-15);
 
     --text-system-danger-a: var(--system-red-600);
-    --text-system-danger-a-h1: var(--system-red-650);
+    --text-system-danger-h1: var(--system-red-650);
 
     --text-system-warning-a: var(--system-yellow-600);
-    --text-system-warning-a-h1: var(--system-yellow-650);
+    --text-system-warning-h1: var(--system-yellow-650);
 
     --text-system-success-a: var(--system-green-600);
-    --text-system-success-a-h1: var(--system-green-650);
+    --text-system-success-h1: var(--system-green-650);
 
     --text-system-info-a: var(--system-blue-600);
-    --text-system-info-a-h1: var(--system-blue-650);
+    --text-system-info-h1: var(--system-blue-650);
 
     --text-system-moment-a: var(--system-purple-600);
-    --text-system-moment-a-h1: var(--system-purple-650);
+    --text-system-moment-h1: var(--system-purple-650);
 
     --text-system-misc-a: var(--shades-gray-600);
-    --text-system-misc-a-h1: var(--shades-gray-650);
+    --text-system-misc-h1: var(--shades-gray-650);
 }

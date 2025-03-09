@@ -1,18 +1,12 @@
+@use 'nullify';
 @use 'themes';
 @use 'fonts';
-@use 'nullify';
 
-.root {
+:root {
   @include themes.theme-common;
-  background-color: var(--surface-invert-a);
-  color: var(--surface-standart-a);
-
+  @include themes.theme-light;
 }
 
 [theme="dark"] {
   @include themes.theme-dark;
-}
-
-[theme="light"] {
-  @include themes.theme-light;
 }

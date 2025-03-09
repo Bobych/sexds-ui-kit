@@ -28,6 +28,11 @@ html, body {
   -ms-text-size-adjust: 100%;
   -moz-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
+
+  background-color: #383838;
+  [back="light"] {
+    background-color: #f5f5f5;
+  }
 }
 
 input, button, textarea {
@@ -47,16 +52,10 @@ button::-moz-focus-inner {
   border: 0;
 }
 
-a, a:visited {
+a, a:visited, a:hover {
   text-decoration: none;
-  color: #2B2B2A;
   -webkit-transition: 0.3s;
   transition: 0.3s;
-}
-
-a:hover {
-  text-decoration: none;
-  color: #2B2B2A;
 }
 
 ul li {
