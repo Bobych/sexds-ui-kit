@@ -19,6 +19,20 @@ const preview: Preview = {
       },
     },
   },
+  globalTypes: {
+    theme: {
+      defaultValue: 'light',
+      toolbar: {
+        title: 'Theme [TODO]',
+        icon: 'mirror',
+        items: [
+          {value: 'light', right: '☼', title: 'Light'},
+          {value: 'dark', right: '☾', title: 'Dark'},
+        ],
+        dynamicTitle: true,
+      },
+    },
+  },
   decorators: [withTheme],
   tags: ['autodocs']
 };

@@ -52,9 +52,7 @@ const Button = React.forwardRef(function Button(
         status = 'default',
         leftIcon,
         rightIcon,
-        selected,
         disabled = false,
-        loading = false,
         children,
         extraProps,
         ...rest
@@ -67,9 +65,7 @@ const Button = React.forwardRef(function Button(
                 view: view,
                 size: size,
                 status: status,
-                selected: selected,
-                disabled: disabled || loading,
-                loading: loading
+                disabled: disabled,
             },
             rest.className
         )
@@ -97,7 +93,7 @@ const Button = React.forwardRef(function Button(
             {...(rest as Pick<typeof props, keyof typeof rest>)}
             {...commonProps}
             ref={ref as React.Ref<HTMLButtonElement>}
-            disabled={disabled || loading}
+            disabled={disabled}
         >
             <CustomIcon name={leftIcon} blockName='button' />
             {children}

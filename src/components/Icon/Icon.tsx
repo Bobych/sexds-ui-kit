@@ -12,6 +12,7 @@ interface IconComponentProps extends IconProps {
 
 const CustomIcon: FC<IconComponentProps> = ({
     name,
+    height,
     blockName = ''
 }) => {
     const b = block(blockName, 'icon');
@@ -26,7 +27,11 @@ const CustomIcon: FC<IconComponentProps> = ({
         return null;
     }
 
-    return <IconComponent className={b()} weight='fill' />;
+    return <IconComponent
+        className={b()}
+        height={height}
+        weight='fill'
+    />;
 }
 
 export default CustomIcon;
