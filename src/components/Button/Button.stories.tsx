@@ -1,10 +1,12 @@
 import { Meta, StoryObj } from "@storybook/react";
+import { action } from '@storybook/addon-actions';
+
 import Button from "./Button";
 import { IconNames } from "../types/icon";
-import {ButtonSizesNames, ButtonStatusesNames, ButtonVariantsNames, ButtonViewsNames} from "./constants.ts";
+import {ButtonSizesNames, ButtonVariantsNames, ButtonViewsNames} from "./constants.ts";
 
 const meta: Meta<typeof Button> = {
-    title: "SEXDS/Button/Variant",
+    title: "SEXDS/Inputs/Button",
     component: Button,
     argTypes: {
         variant: {
@@ -19,10 +21,6 @@ const meta: Meta<typeof Button> = {
             control: "select",
             options: ButtonSizesNames,
         },
-        status: {
-            control: "select",
-            options: ButtonStatusesNames,
-        },
         leftIcon: {
             control: "select",
             options: IconNames
@@ -31,13 +29,10 @@ const meta: Meta<typeof Button> = {
             control: "select",
             options: IconNames
         },
-        selected: {
-            control: "boolean",
-        },
         disabled: {
             control: "boolean",
         },
-        loading: {
+        action: {
             control: "boolean",
         },
         children: {
@@ -59,101 +54,101 @@ type Story = StoryObj<typeof Button>;
 export const Default: Story = {
     args: {
         children: "Text",
+        onClick: action('onClick'),
+        onMouseEnter: action('onMouseEnter'),
+        onMouseLeave: action('onMouseLeave'),
         variant: "default",
         view: "default",
         size: "m",
-        status: "default",
         leftIcon: "HandEye",
         rightIcon: "Hand",
-        disabled: false,
-        loading: false,
+        action: false,
         selected: false,
-        href: "https://sportexclub.com",
-        target: "_blank"
+        disabled: false
     },
 };
 
 export const Invert: Story = {
     args: {
         children: "Text",
+        onClick: action('onClick'),
+        onMouseEnter: action('onMouseEnter'),
+        onMouseLeave: action('onMouseLeave'),
         variant: "invert",
         view: "default",
         size: "m",
-        status: "default",
         leftIcon: "HandEye",
         rightIcon: "Hand",
-        disabled: false,
-        loading: false,
+        action: false,
         selected: false,
-        href: "https://sportexclub.com",
-        target: "_blank"
+        disabled: false
     },
 };
 
 export const Accent: Story = {
     args: {
         children: "Text",
+        onClick: action('onClick'),
+        onMouseEnter: action('onMouseEnter'),
+        onMouseLeave: action('onMouseLeave'),
         variant: "accent",
         view: "default",
         size: "m",
-        status: "default",
         leftIcon: "HandEye",
         rightIcon: "Hand",
-        disabled: false,
-        loading: false,
+        action: false,
         selected: false,
-        href: "https://sportexclub.com",
-        target: "_blank"
+        disabled: false
     },
 };
 
 export const Success: Story = {
     args: {
         children: "Text",
+        onClick: action('onClick'),
+        onMouseEnter: action('onMouseEnter'),
+        onMouseLeave: action('onMouseLeave'),
         variant: "success",
         view: "default",
         size: "m",
-        status: "default",
         leftIcon: "HandEye",
         rightIcon: "Hand",
-        disabled: false,
-        loading: false,
+        action: false,
         selected: false,
-        href: "https://sportexclub.com",
-        target: "_blank"
+        disabled: false
     },
 };
 
 export const Warning: Story = {
     args: {
         children: "Text",
+        onClick: action('onClick'),
+        onMouseEnter: action('onMouseEnter'),
+        onMouseLeave: action('onMouseLeave'),
         variant: "warning",
         view: "default",
         size: "m",
-        status: "default",
         leftIcon: "HandEye",
         rightIcon: "Hand",
-        disabled: false,
-        loading: false,
+        action: false,
         selected: false,
-        href: "https://sportexclub.com",
-        target: "_blank"
+        disabled: false
     },
 };
 
 export const Error: Story = {
     args: {
         children: "Text",
+        onClick: action('onClick'),
+        onMouseEnter: action('onMouseEnter'),
+        onMouseLeave: action('onMouseLeave'),
         variant: "error",
         view: "default",
         size: "m",
-        status: "default",
         leftIcon: "HandEye",
         rightIcon: "Hand",
-        disabled: false,
-        loading: false,
+        action: false,
         selected: false,
-        href: "https://sportexclub.com",
-        target: "_blank"
+        disabled: false
     },
 };

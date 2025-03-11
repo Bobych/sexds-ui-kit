@@ -1,21 +1,21 @@
 import React from "react";
 
 import {block} from "../utils/block.ts";
-import "./button.scss";
+import "./Button.scss";
 import {IconType} from "../types/icon.ts";
-import {ButtonSizes, ButtonStatuses, ButtonViews, ButtonVariants} from "./constants.ts";
+import {ButtonSizes, ButtonViews, ButtonVariants} from "./constants.ts";
 import CustomIcon from "../Icon/Icon.tsx";
+import {eventBroker} from "../utils/eventBroker";
 
 interface ButtonCommonProps {
     variant?: ButtonVariants,
     view?: ButtonViews,
     size?: ButtonSizes,
-    status?: ButtonStatuses,
     leftIcon?: IconType,
     rightIcon?: IconType,
+    action?: boolean,
     selected?: boolean,
     disabled?: boolean,
-    loading?: boolean,
     children?: React.ReactNode
 }
 
@@ -49,22 +49,44 @@ const Button = React.forwardRef(function Button(
         variant = 'default',
         view = 'default',
         size = 'm',
-        status = 'default',
         leftIcon,
         rightIcon,
+        action = false,
+        selected = false,
         disabled = false,
         children,
         extraProps,
         ...rest
     } = props;
 
+    const handleClickCapture = React.useCallback(
+        (event: React.MouseEvent<any>) => {
+            eventBroker.publish({
+                componentId: 'Button',
+                eventId: 'click',
+                domEvent: event,
+                meta: {
+                    content: event.currentTarget.textContent,
+                    view: view,
+                },
+            });
+
+            if (props.onClickCapture) {
+                props.onClickCapture(event);
+            }
+        },
+        [view, props.onClickCapture],
+    );
+
     const commonProps = {
+        onClickCapture: handleClickCapture,
         className: b(
             {
                 variant: variant,
                 view: view,
                 size: size,
-                status: status,
+                action: action,
+                selected: selected,
                 disabled: disabled,
             },
             rest.className
