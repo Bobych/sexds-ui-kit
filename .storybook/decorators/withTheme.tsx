@@ -1,11 +1,13 @@
 import * as React from "react";
 import { Decorator } from "@storybook/react";
 
+import {ThemeProvider} from "../../src/components/theme/ThemeProvider";
+
+
 export const withTheme: Decorator = (Story, context) => {
-    const background = context.globals.backgrounds?.value;
-    const isDark = background === "#383838";
-
-    document.documentElement.setAttribute("theme", isDark ? "dark" : "light");
-
-    return <Story />;
+    return (
+        <ThemeProvider theme={context.globals.theme} >
+            <Story {...context} />
+        </ThemeProvider>
+    );
 };

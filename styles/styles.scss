@@ -1,6 +1,7 @@
 @use 'nullify';
-@use 'themes';
 @use 'fonts';
+
+@use 'themes';
 
 :root {
   @include themes.theme-common;

@@ -6,7 +6,7 @@ import { IconNames } from "../types/icon";
 import {ButtonSizesNames, ButtonVariantsNames, ButtonViewsNames} from "./constants.ts";
 
 const meta: Meta<typeof Button> = {
-    title: "SEXDS/Inputs/Button",
+    title: "Components/Inputs/Button",
     component: Button,
     argTypes: {
         variant: {
