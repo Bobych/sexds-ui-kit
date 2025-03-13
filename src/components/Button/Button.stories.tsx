@@ -49,6 +49,7 @@ const meta: Meta<typeof Button> = {
 };
 
 export default meta;
+
 type Story = StoryObj<typeof Button>;
 
 export const Default: Story = {
@@ -68,15 +69,15 @@ export const Default: Story = {
     },
 };
 
-export const Invert: Story = {
+export const ExtraLarge: Story = {
     args: {
         children: "Text",
         onClick: action('onClick'),
         onMouseEnter: action('onMouseEnter'),
         onMouseLeave: action('onMouseLeave'),
-        variant: "invert",
+        variant: "default",
         view: "default",
-        size: "m",
+        size: "xl",
         leftIcon: "HandEye",
         rightIcon: "Hand",
         action: false,
@@ -102,53 +103,53 @@ export const Accent: Story = {
     },
 };
 
-export const Success: Story = {
+export const Action: Story = {
     args: {
         children: "Text",
         onClick: action('onClick'),
         onMouseEnter: action('onMouseEnter'),
         onMouseLeave: action('onMouseLeave'),
-        variant: "success",
+        variant: "default",
         view: "default",
         size: "m",
         leftIcon: "HandEye",
         rightIcon: "Hand",
-        action: false,
+        action: true,
         selected: false,
         disabled: false
     },
 };
 
-export const Warning: Story = {
+export const Selected: Story = {
     args: {
         children: "Text",
         onClick: action('onClick'),
         onMouseEnter: action('onMouseEnter'),
         onMouseLeave: action('onMouseLeave'),
-        variant: "warning",
+        variant: "default",
         view: "default",
         size: "m",
         leftIcon: "HandEye",
         rightIcon: "Hand",
         action: false,
-        selected: false,
+        selected: true,
         disabled: false
     },
 };
 
-export const Error: Story = {
+export const Disabled: Story = {
     args: {
         children: "Text",
         onClick: action('onClick'),
         onMouseEnter: action('onMouseEnter'),
         onMouseLeave: action('onMouseLeave'),
-        variant: "error",
+        variant: "default",
         view: "default",
         size: "m",
         leftIcon: "HandEye",
         rightIcon: "Hand",
         action: false,
         selected: false,
-        disabled: false
+        disabled: true
     },
 };
