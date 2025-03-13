@@ -4,7 +4,8 @@
     "baseUrl": ".",
     "paths": {
       "@/*": ["src/*"]
-    }
+    },
+    "declaration": true
   },
   "extends": [
     "./tsconfig.app.json",
@@ -13,5 +14,5 @@
   "include": [
     "src/**/*.ts",
     "src/**/*.tsx"
-  ],
+  ]
 }
