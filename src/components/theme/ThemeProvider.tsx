@@ -5,7 +5,7 @@ import * as React from 'react';
 import {
     DEFAULT_THEME,
 } from "./constants";
-import {ThemeType} from "./types";
+import type {ThemeType} from "./types";
 import {ThemeContext} from "./ThemeContext";
 
 

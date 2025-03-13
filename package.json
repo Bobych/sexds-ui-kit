@@ -1,11 +1,43 @@
 {
-  "name": "sexds",
-  "private": true,
+  "name": "@sexds/ui-kit",
   "version": "0.0.1",
+  "description": "Sportexclub design system",
+  "keywords": [
+    "component",
+    "design-system",
+    "react",
+    "react-component",
+    "ui",
+    "uikit",
+    "web"
+  ],
+  "license": "MIT",
+  "files": [
+    "out",
+    "styles"
+  ],
+  "engines": {
+    "node": ">= 20",
+    "npm": ">= 9",
+    "yarn": "Please use npm instead of yarn to install dependencies",
+    "pnpm": "Please use npm instead of pnpm to install dependencies"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sexds/ui-kit"
+  },
   "type": "module",
+  "main": "./out/sexds-ui-kit.umd.js",
+  "module": "./out/sexds-ui-kit.es.js",
+  "types": "./out/index.d.ts",
+  "peerDependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
+    "prepare": "npm run build",
     "sb:dev": "storybook dev -p 6006",
     "sb:build": "storybook build"
   },
@@ -14,8 +46,7 @@
     "@phosphor-icons/react": "^2.1.7",
     "@storybook/addon-themes": "^8.6.4",
     "@storybook/addon-viewport": "^8.6.4",
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1"
+    "path": "^0.12.7"
   },
   "devDependencies": {
     "@chromatic-com/storybook": "^3.2.5",
@@ -27,6 +58,7 @@
     "@storybook/react": "^8.6.4",
     "@storybook/react-vite": "^8.6.4",
     "@storybook/test": "^8.6.4",
+    "@types/node": "^22.13.10",
     "@types/react": "^18.3.18",
     "@types/react-dom": "^18.3.5",
     "@vitejs/plugin-react": "^4.3.4",

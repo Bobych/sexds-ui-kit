@@ -1,9 +1,9 @@
-import { Meta, StoryObj } from "@storybook/react";
 import { action } from '@storybook/addon-actions';
+import type { Meta, StoryObj } from "@storybook/react";
 
 import Button from "./Button";
 import { IconNames } from "../types/icon";
-import {ButtonSizesNames, ButtonVariantsNames, ButtonViewsNames} from "./constants.ts";
+import {ButtonSizesNames, ButtonVariantsNames, ButtonViewsNames} from "./constants";
 
 const meta: Meta<typeof Button> = {
     title: "Components/Inputs/Button",

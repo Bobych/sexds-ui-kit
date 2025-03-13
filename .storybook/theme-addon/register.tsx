@@ -4,6 +4,7 @@ import type {API} from '@storybook/manager-api';
 import {addons, types, useGlobals} from '@storybook/manager-api';
 
 import {themes} from '../theme';
+import {ThemeType} from "@/components/theme/types.ts";
 
 const ADDON_ID = 'theme-addon';
 const TOOL_ID = `${ADDON_ID}tool`;
@@ -24,7 +25,7 @@ function Tool({api}: {api: API}) {
     }] = useGlobals();
     React.useEffect(() => {
         api.setOptions({
-            theme: themes[theme]
+            theme: themes[theme as ThemeType]
         });
     }, [theme]);
     return null;

@@ -1,7 +1,4 @@
+.storybook
 .idea
-
+.github
 node_modules
-fonts
-out
-
-.env.*

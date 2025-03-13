@@ -1,16 +1,15 @@
-import {FC} from 'react';
-import {Icon, IconProps} from '@phosphor-icons/react';
-
-import {block} from '../utils/block.ts';
-import {IconType} from '../types/icon.ts';
+import * as React from 'react';
 import * as Icons from '@phosphor-icons/react';
 
-interface IconComponentProps extends IconProps {
+import type {IconType} from '../types/icon.ts';
+import {block} from '../utils/block';
+
+interface IconComponentProps extends Icons.IconProps {
     name?: IconType
     blockName?: string;
 }
 
-const CustomIcon: FC<IconComponentProps> = ({
+const CustomIcon: React.FC<IconComponentProps> = ({
     name,
     height,
     blockName = ''
@@ -21,7 +20,7 @@ const CustomIcon: FC<IconComponentProps> = ({
         return null;
     }
 
-    const IconComponent: Icon = Icons[name];
+    const IconComponent: Icons.Icon = Icons[name];
     if (!IconComponent) {
         console.warn(`Icon "${name}" is no found in @phosphor-icons/react/dist/ssr.`)
         return null;

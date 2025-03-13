@@ -1,6 +1,6 @@
 import * as React from "react";
 
-import {ThemeType} from "./types";
+import type {ThemeType} from "./types";
 import {DEFAULT_THEME} from "./constants";
 
 

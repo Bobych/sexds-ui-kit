@@ -1,10 +1,10 @@
-import React from "react";
+import * as React from "react";
 
-import {block} from "../utils/block.ts";
+import {block} from "../utils/block";
 import "./Button.scss";
-import {IconType} from "../types/icon.ts";
-import {ButtonSizes, ButtonViews, ButtonVariants} from "./constants.ts";
-import CustomIcon from "../Icon/Icon.tsx";
+import type {IconType} from "../types/icon";
+import {ButtonSizes, ButtonViews, ButtonVariants} from "./constants";
+import CustomIcon from "../Icon/Icon";
 import {eventBroker} from "../utils/eventBroker";
 
 interface ButtonCommonProps {
@@ -44,7 +44,7 @@ const Button = React.forwardRef(function Button(
     ref:
         | React.Ref<HTMLButtonElement>
         | React.Ref<HTMLAnchorElement>
-    ) {
+) {
     const {
         variant = 'default',
         view = 'default',
@@ -60,7 +60,7 @@ const Button = React.forwardRef(function Button(
     } = props;
 
     const handleClickCapture = React.useCallback(
-        (event: React.MouseEvent<any>) => {
+        (event: React.MouseEvent<HTMLButtonElement> & React.MouseEvent<HTMLAnchorElement>) => {
             eventBroker.publish({
                 componentId: 'Button',
                 eventId: 'click',
