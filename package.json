@@ -26,6 +26,7 @@
     "type": "git",
     "url": "https://github.com/sexds/ui-kit.git"
   },
+  "homepage": "https://www.npmjs.com/package/@sexds/ui-kit",
   "type": "module",
   "main": "./out/sexds-ui-kit.umd.js",
   "module": "./out/sexds-ui-kit.es.js",
