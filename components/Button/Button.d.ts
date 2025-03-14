@@ -1,14 +1,10 @@
-import { IconType } from '../types/icon';
-import { ButtonSizes, ButtonViews, ButtonVariants } from './constants';
-import * as React from "react";
-interface ButtonCommonProps {
+import { default as React } from '../../../node_modules/react';
+import { ButtonSizes, ButtonViews, ButtonVariants } from './types';
+export interface ButtonCommonProps {
     variant?: ButtonVariants;
     view?: ButtonViews;
     size?: ButtonSizes;
-    leftIcon?: IconType;
-    rightIcon?: IconType;
-    action?: boolean;
-    selected?: boolean;
+    loading?: boolean;
     disabled?: boolean;
     children?: React.ReactNode;
 }
@@ -23,5 +19,5 @@ interface ButtonLinkProps extends ButtonCommonProps, React.AnchorHTMLAttributes<
     extraProps?: React.AnchorHTMLAttributes<HTMLAnchorElement>;
 }
 type ButtonProps = ButtonButtonProps | ButtonLinkProps;
-declare const Button: React.ForwardRefExoticComponent<ButtonProps & React.RefAttributes<HTMLButtonElement>>;
-export default Button;
+export declare const Button: React.ForwardRefExoticComponent<ButtonProps & React.RefAttributes<HTMLButtonElement>>;
+export {};

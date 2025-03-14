@@ -1,3 +1,3 @@
+import { default as React } from '../../../node_modules/react';
 import { ThemeType } from './types';
-import * as React from "react";
 export declare const ThemeContext: React.Context<ThemeType>;
