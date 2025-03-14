@@ -20,11 +20,11 @@
       --button-second-surface-default: var(--surface-standart-transluent-l6);
       --button-second-surface-hover: var(--surface-standart-transluent-l5);
       --button-second-surface-action: var(--surface-standart-a);
-      --button-second-surface-select: var(--surface-standart-l2);
+      --button-second-surface-loading: var(--surface-standart-l2);
       --button-second-surface-disable: var(--surface-standart-transluent-l5);
 
       --button-second-line-default: var(--line-standart-l1);
-      --button-second-line-misc: var(--line-system-misc-a);
+      --button-second-line-second: var(--line-system-misc-a);
 
       --button-text-default: var(--text-invert-transluent-a);
       --button-text-second: var(--text-standart-transluent-a);
@@ -36,17 +36,17 @@
       --button-default-surface-default: var(--surface-invert-a);
       --button-default-line-default: var(--line-invert-a);
 
-      --button-default-surface-hover: var(--surface-invert-transluent-l5);
+      --button-default-surface-hover: var(--surface-invert-l1);
       --button-default-line-hover: var(--line-invert-a);
 
-      --button-second-surface-default: var(--surface-standart-transluent-l6);
-      --button-second-surface-hover: var(--surface-invert-transluent-a);
-      --button-second-surface-action: var(--surface-invert-l3);
-      --button-second-surface-select: var(--surface-invert-a);
+      --button-second-surface-default: var(--surface-invert-transluent-l6);
+      --button-second-surface-hover: var(--surface-invert-transluent-l5);
+      --button-second-surface-action: var(--surface-invert-l1);
+      --button-second-surface-loading: var(--surface-invert-l2);
       --button-second-surface-disable: var(--surface-invert-transluent-l4);
 
       --button-second-line-default: var(--line-invert-a);
-      --button-second-line-misc: var(--line-invert-a);
+      --button-second-line-second: var(--line-system-misc-a);
 
       --button-text-default: var(--text-standart-transluent-a);
       --button-text-second: var(--text-invert-transluent-a);
@@ -56,61 +56,91 @@
     }
     &_accent {
       --button-default-surface-default: var(--surface-primary-a);
-      --button-default-line-default: var(--line-standart-a);
+      --button-default-line-default: var(--line-primary-h1);
 
       --button-default-surface-hover: var(--surface-primary-h1);
-      --button-default-line-hover: var(--line-invert-a);
+      --button-default-line-hover: var(--line-primary-h1);
 
       --button-second-surface-default: var(--surface-primary-transluent-l4);
       --button-second-surface-hover: var(--surface-primary-transluent-l2);
-      --button-second-surface-action: var(--surface-primary-transluent-l1);
-      --button-second-surface-select: var(--surface-primary-a);
+      --button-second-surface-action: var(--surface-primary-h1);
+      --button-second-surface-loading: var(--surface-primary-l1);
       --button-second-surface-disable: var(--surface-primary-transluent-l4);
 
       --button-second-line-default: var(--line-primary-h1);
-      --button-second-line-misc: var(--line-invert-a);
+      --button-second-line-second: var(--line-standart-h1);
 
       --button-text-default: var(--text-invert-transluent-a);
       --button-text-second: var(--text-primary-a);
       --button-text-disable: var(--text-standart-transluent-l3);
 
-      --button-shades-color: var(--shades-black-transluent-15);
+      --button-shades-color: var(--shades-black-transluent-10);
     }
     &_success {
-      --button-line-color: var(--line-standart-a);
-      --button-invert-line-color: var(--line-system-success-a);
+      --button-default-surface-default: var(--surface-system-success-a);
+      --button-default-line-default: var(--line-system-success-a);
 
-      --button-surface-color: var(--surface-system-success-a);
-      --button-invert-surface-color: var(--surface-system-success-light);
+      --button-default-surface-hover: var(--surface-system-success-contrast);
+      --button-default-line-hover: var(--line-system-success-a);
 
-      --button-shades-color: var(--shades-black-transluent-15);
+      --button-second-surface-default: var(--surface-system-success-light);
+      --button-second-surface-hover: var(--surface-system-success-light-contrast);
+      --button-second-surface-action: var(--surface-system-success-contrast);
+      --button-second-surface-loading: var(--surface-system-success-l1);
+      --button-second-surface-disable: var(--surface-system-success-medium);
 
-      --button-text-color: var(--text-standart-transluent-a);
-      --button-invert-text-color: var(--text-system-success-a);
+      --button-second-line-default: var(--line-system-success-a);
+      --button-second-line-second: var(--line-standart-h1);
+
+      --button-text-default: var(--text-standart-transluent-a);
+      --button-text-second: var(--text-system-success-a);
+      --button-text-disable: var(--text-standart-transluent-l3);
+
+      --button-shades-color: var(--shades-black-transluent-10);
     }
     &_warning {
-      --button-line-color: var(--line-standart-a);
-      --button-invert-line-color: var(--line-system-warning-a);
+      --button-default-surface-default: var(--surface-system-warning-a);
+      --button-default-line-default: var(--line-system-warning-a);
 
-      --button-surface-color: var(--surface-system-warning-a);
-      --button-invert-surface-color: var(--surface-system-warning-light);
+      --button-default-surface-hover: var(--surface-system-warning-contrast);
+      --button-default-line-hover: var(--line-system-warning-a);
 
-      --button-shades-color: var(--shades-black-transluent-15);
+      --button-second-surface-default: var(--surface-system-warning-light);
+      --button-second-surface-hover: var(--surface-system-warning-light-contrast);
+      --button-second-surface-action: var(--surface-system-warning-contrast);
+      --button-second-surface-loading: var(--surface-system-warning-l1);
+      --button-second-surface-disable: var(--surface-system-warning-medium);
 
-      --button-text-color: var(--text-standart-transluent-a);
-      --button-invert-text-color: var(--text-system-warning-a);
+      --button-second-line-default: var(--line-system-warning-a);
+      --button-second-line-second: var(--line-standart-h1);
+
+      --button-text-default: var(--text-standart-transluent-a);
+      --button-text-second: var(--text-system-warning-a);
+      --button-text-disable: var(--text-standart-transluent-l3);
+
+      --button-shades-color: var(--shades-black-transluent-10);
     }
     &_error {
-      --button-line-color: var(--line-standart-a);
-      --button-invert-line-color: var(--line-system-danger-a);
+      --button-default-surface-default: var(--surface-system-danger-a);
+      --button-default-line-default: var(--line-system-danger-a);
 
-      --button-surface-color: var(--surface-system-danger-a);
-      --button-invert-surface-color: var(--surface-system-danger-light);
+      --button-default-surface-hover: var(--surface-system-danger-contrast);
+      --button-default-line-hover: var(--line-system-danger-a);
 
-      --button-shades-color: var(--shades-black-transluent-15);
+      --button-second-surface-default: var(--surface-system-danger-light);
+      --button-second-surface-hover: var(--surface-system-danger-light-contrast);
+      --button-second-surface-action: var(--surface-system-danger-contrast);
+      --button-second-surface-loading: var(--surface-system-danger-l1);
+      --button-second-surface-disable: var(--surface-system-danger-medium);
 
-      --button-text-color: var(--text-invert-transluent-a);
-      --button-invert-text-color: var(--text-system-danger-a);
+      --button-second-line-default: var(--line-system-danger-a);
+      --button-second-line-second: var(--line-standart-h1);
+
+      --button-text-default: var(--text-invert-transluent-a);
+      --button-text-second: var(--text-system-danger-a);
+      --button-text-disable: var(--text-standart-transluent-l3);
+
+      --button-shades-color: var(--shades-black-transluent-10);
     }
   }
 
@@ -198,15 +228,33 @@
     }
   }
 
-  &_action {
-    background-color: var(--button-second-surface-action);
-    color: var(--button-text-default);
+
+  @keyframes pressEffect {
+    0% {
+      transform: scale(1); /* Исходное состояние */
+    }
+    40% {
+      transform: scale(0.9); /* Уменьшаем кнопку к центру */
+    }
+    70% {
+      transform: scale(1.1); /* Увеличиваем на 10% */
+    }
+    100% {
+      transform: scale(1); /* Возвращаем в исходное состояние */
+    }
   }
 
-  &_selected {
-    background-color: var(--button-second-surface-select);
+  &:active {
+    background-color: var(--button-second-surface-action);
     color: var(--button-text-default);
-    border-color: var(--button-second-line-misc);
+
+    animation: pressEffect 0.15s ease-out forwards;
+  }
+
+  &_loading {
+    background-color: var(--button-second-surface-loading);
+    color: var(--button-text-default);
+    border-color: var(--button-second-line-second);
   }
 
   &_disabled {
@@ -215,5 +263,9 @@
 
     background-color: var(--button-second-surface-disable);
     color: var(--button-text-disable);
+  }
+
+  &__icon {
+    display: flex;
   }
 }

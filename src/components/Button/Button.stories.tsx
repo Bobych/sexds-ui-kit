@@ -1,9 +1,10 @@
 import { action } from '@storybook/addon-actions';
 import type { Meta, StoryObj } from "@storybook/react";
 
-import Button from "./Button";
-import { IconNames } from "../types/icon";
+import {Button} from "./Button";
 import {ButtonSizesNames, ButtonVariantsNames, ButtonViewsNames} from "./constants";
+import {Icon} from "./ButtonIcon";
+import {Hand, HandEye} from "@phosphor-icons/react";
 
 const meta: Meta<typeof Button> = {
     title: "Components/Inputs/Button",
@@ -21,18 +22,7 @@ const meta: Meta<typeof Button> = {
             control: "select",
             options: ButtonSizesNames,
         },
-        leftIcon: {
-            control: "select",
-            options: IconNames
-        },
-        rightIcon: {
-            control: "select",
-            options: IconNames
-        },
         disabled: {
-            control: "boolean",
-        },
-        action: {
             control: "boolean",
         },
         children: {
@@ -58,15 +48,24 @@ export const Default: Story = {
         onClick: action('onClick'),
         onMouseEnter: action('onMouseEnter'),
         onMouseLeave: action('onMouseLeave'),
+        onMouseDown: action('onMouseDown'),
+        onMouseUp: action('onMouseUp'),
         variant: "default",
         view: "default",
         size: "m",
-        leftIcon: "HandEye",
-        rightIcon: "Hand",
-        action: false,
-        selected: false,
+        loading: false,
         disabled: false
     },
+};
+
+export const WithIcon: Story = {
+    render: (args) => (
+        <Button {...args}>
+            <Icon data={HandEye} side={'left'} />
+            Text
+            <Icon data={Hand} side={'right'} />
+        </Button>
+    ),
 };
 
 export const ExtraLarge: Story = {
@@ -75,13 +74,12 @@ export const ExtraLarge: Story = {
         onClick: action('onClick'),
         onMouseEnter: action('onMouseEnter'),
         onMouseLeave: action('onMouseLeave'),
+        onMouseDown: action('onMouseDown'),
+        onMouseUp: action('onMouseUp'),
         variant: "default",
         view: "default",
         size: "xl",
-        leftIcon: "HandEye",
-        rightIcon: "Hand",
-        action: false,
-        selected: false,
+        loading: false,
         disabled: false
     },
 };
@@ -92,13 +90,12 @@ export const Accent: Story = {
         onClick: action('onClick'),
         onMouseEnter: action('onMouseEnter'),
         onMouseLeave: action('onMouseLeave'),
+        onMouseDown: action('onMouseDown'),
+        onMouseUp: action('onMouseUp'),
         variant: "accent",
         view: "default",
         size: "m",
-        leftIcon: "HandEye",
-        rightIcon: "Hand",
-        action: false,
-        selected: false,
+        loading: false,
         disabled: false
     },
 };
@@ -109,30 +106,28 @@ export const Action: Story = {
         onClick: action('onClick'),
         onMouseEnter: action('onMouseEnter'),
         onMouseLeave: action('onMouseLeave'),
+        onMouseDown: action('onMouseDown'),
+        onMouseUp: action('onMouseUp'),
         variant: "default",
         view: "default",
         size: "m",
-        leftIcon: "HandEye",
-        rightIcon: "Hand",
-        action: true,
-        selected: false,
+        loading: false,
         disabled: false
     },
 };
 
-export const Selected: Story = {
+export const Loading: Story = {
     args: {
         children: "Text",
         onClick: action('onClick'),
         onMouseEnter: action('onMouseEnter'),
         onMouseLeave: action('onMouseLeave'),
+        onMouseDown: action('onMouseDown'),
+        onMouseUp: action('onMouseUp'),
         variant: "default",
         view: "default",
         size: "m",
-        leftIcon: "HandEye",
-        rightIcon: "Hand",
-        action: false,
-        selected: true,
+        loading: true,
         disabled: false
     },
 };
@@ -143,13 +138,12 @@ export const Disabled: Story = {
         onClick: action('onClick'),
         onMouseEnter: action('onMouseEnter'),
         onMouseLeave: action('onMouseLeave'),
+        onMouseDown: action('onMouseDown'),
+        onMouseUp: action('onMouseUp'),
         variant: "default",
         view: "default",
         size: "m",
-        leftIcon: "HandEye",
-        rightIcon: "Hand",
-        action: false,
-        selected: false,
+        loading: false,
         disabled: true
     },
 };

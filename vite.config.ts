@@ -16,20 +16,19 @@ export default defineConfig({
     port: 3333
   },
   build: {
-    outDir: 'out',
-    sourcemap: true,
     lib: {
       entry: path.resolve(__dirname, 'src/index.ts'),
-      name: 'sexds/ui-kit',
+      formats: ['cjs'],
       fileName: (format) => `sexds-ui-kit.${format}.js`,
     },
     rollupOptions: {
-      external: ['react', 'react-dom'],
+      external: ['react', 'react-dom', 'react/jsx-runtime'],
       output: {
         globals: {
+          'react-dom': 'ReactDom',
           react: 'React',
-          'react-dom': 'ReactDOM',
-        },
+          'react/jsx-runtime': 'ReactJsxRuntime'
+        }
       },
     },
   }

@@ -13,7 +13,7 @@
   ],
   "license": "MIT",
   "files": [
-    "out",
+    "dist",
     "styles"
   ],
   "engines": {
@@ -29,18 +29,21 @@
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/"
   },
-  "homepage": "https://www.npmjs.com/package/@sexds/ui-kit",
-  "type": "module",
-  "main": "./out/sexds-ui-kit.umd.js",
-  "module": "./out/sexds-ui-kit.es.js",
-  "types": "./out/index.d.ts",
+  "homepage": "https://github.com/sexds/ui-kit#readme",
+  "type": "commonjs",
+  "main": "./dist/sexds-ui-kit.cjs.js",
+  "types": "./dist/index.d.ts",
+  "sideEffects": [
+    "*.css",
+    "*.scss"
+  ],
   "peerDependencies": {
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1"
+    "react": "^18.3.1 || ^19.0.0",
+    "react-dom": "^18.3.1 || ^ 19.0.0"
   },
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "build": "tsc -b && vite build",
     "prepare": "npm run build",
     "sb:dev": "storybook dev -p 6006",
     "sb:build": "storybook build"

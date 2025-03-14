@@ -1,20 +1,19 @@
-import * as React from "react";
+"use client";
+
+import React from "react";
 
 import {block} from "../utils/block";
-import "./Button.scss";
-import type {IconType} from "../types/icon";
-import {ButtonSizes, ButtonViews, ButtonVariants} from "./constants";
-import CustomIcon from "../Icon/Icon";
+import type {ButtonSizes, ButtonViews, ButtonVariants} from "./types";
 import {eventBroker} from "../utils/eventBroker";
+import {Icon} from './ButtonIcon';
 
-interface ButtonCommonProps {
+import "./Button.scss";
+
+export interface ButtonCommonProps {
     variant?: ButtonVariants,
     view?: ButtonViews,
     size?: ButtonSizes,
-    leftIcon?: IconType,
-    rightIcon?: IconType,
-    action?: boolean,
-    selected?: boolean,
+    loading?: boolean,
     disabled?: boolean,
     children?: React.ReactNode
 }
@@ -39,7 +38,7 @@ type ButtonProps =
     | ButtonButtonProps
     | ButtonLinkProps;
 
-const Button = React.forwardRef(function Button(
+export const Button = React.forwardRef(function Button(
     props: ButtonProps,
     ref:
         | React.Ref<HTMLButtonElement>
@@ -49,10 +48,7 @@ const Button = React.forwardRef(function Button(
         variant = 'default',
         view = 'default',
         size = 'm',
-        leftIcon,
-        rightIcon,
-        action = false,
-        selected = false,
+        loading = false,
         disabled = false,
         children,
         extraProps,
@@ -85,15 +81,14 @@ const Button = React.forwardRef(function Button(
                 variant: variant,
                 view: view,
                 size: size,
-                action: action,
-                selected: selected,
+                loading: loading,
                 disabled: disabled,
             },
             rest.className
         )
     };
 
-    if (typeof props.href !== 'undefined') {
+    if (props.href !== undefined) {
         return (
             <a
                 {...(rest as Pick<typeof props, keyof typeof rest>)}
@@ -103,9 +98,7 @@ const Button = React.forwardRef(function Button(
                 rel={props.target === '_blank' && !rest.rel ? 'noopener noreferrer' : rest.rel}
                 aria-disabled={disabled ?? undefined}
             >
-                <CustomIcon name={leftIcon} blockName='button' />
-                {children}
-                <CustomIcon name={rightIcon} blockName='button' />
+                {prepareChildren(children)}
             </a>
         );
     }
@@ -117,13 +110,40 @@ const Button = React.forwardRef(function Button(
             ref={ref as React.Ref<HTMLButtonElement>}
             disabled={disabled}
         >
-            <CustomIcon name={leftIcon} blockName='button' />
-            {children}
-            <CustomIcon name={rightIcon} blockName='button' />
+            {prepareChildren(children)}
         </button>
     );
 });
 
 const b = block('button');
 
-export default Button;
+function prepareChildren(children: React.ReactNode) {
+    const childrenArray = React.Children.toArray(children);
+
+    const icons = childrenArray.filter(
+        (child) => React.isValidElement(child) && child.type === Icon
+    );
+
+    const leftIcon = icons[0];
+    const rightIcon = icons[1];
+
+    const text = childrenArray.filter(
+        (child) =>
+            typeof child === "string" ||
+            (React.isValidElement(child) && child.type !== Icon)
+    );
+
+    return (
+        <>
+            {
+                React.isValidElement(leftIcon) &&
+                React.cloneElement(leftIcon)
+            }
+            {text.length > 0 && <span className={b('content')}>{text}</span>}
+            {
+                React.isValidElement(rightIcon) &&
+                React.cloneElement(rightIcon)
+            }
+        </>
+    );
+}

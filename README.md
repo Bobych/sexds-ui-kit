@@ -1,4 +1,4 @@
-# UIKit &middot; [![npm package](https://img.shields.io/npm/v/@sexds/ui-kit)](https://www.npmjs.com/package/@sexds/ui-kit) [![storybook](https://img.shields.io/badge/Storybook-deployed-ff4685)](https://preview.gravity-ui.com/uikit/)
+# UIKit &middot; [![npm package](https://img.shields.io/npm/v/@sexds/ui-kit)](https://github.com/sexds/ui-kit/packages) [![storybook](https://img.shields.io/badge/Storybook-deployed-ff4685)](https://preview.gravity-ui.com/uikit/)
 
 Sportexclub flexible design system.
 
