@@ -231,16 +231,16 @@
 
   @keyframes pressEffect {
     0% {
-      transform: scale(1); /* Исходное состояние */
+      transform: scale(1);
     }
     40% {
-      transform: scale(0.9); /* Уменьшаем кнопку к центру */
+      transform: scale(0.9);
     }
     70% {
-      transform: scale(1.1); /* Увеличиваем на 10% */
+      transform: scale(1.1);
     }
     100% {
-      transform: scale(1); /* Возвращаем в исходное состояние */
+      transform: scale(1);
     }
   }
 
