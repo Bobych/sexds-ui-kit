@@ -2,4 +2,3 @@ import { ButtonSizesNames, ButtonVariantsNames, ButtonViewsNames } from './const
 export type ButtonVariants = typeof ButtonVariantsNames[number];
 export type ButtonSizes = typeof ButtonSizesNames[number];
 export type ButtonViews = typeof ButtonViewsNames[number];
-export type ButtonIconSides = 'left' | 'right';
