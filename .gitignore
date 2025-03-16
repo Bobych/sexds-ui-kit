@@ -2,6 +2,9 @@
 
 node_modules
 fonts
-out
+dist
 
-.env.*
+.env*
+
+*.tsbuildinfo
+next-env.d.ts

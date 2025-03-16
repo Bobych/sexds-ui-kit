@@ -5,7 +5,7 @@ import React from "react";
 import {block} from "../utils/block";
 import type {ButtonSizes, ButtonViews, ButtonVariants} from "./types";
 import {eventBroker} from "../utils/eventBroker";
-import {Icon} from './ButtonIcon';
+import {Icon} from 'components';
 
 import "./Button.scss";
 
