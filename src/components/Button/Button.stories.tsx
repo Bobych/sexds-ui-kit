@@ -1,10 +1,10 @@
 import { action } from '@storybook/addon-actions';
+import {Hand, HandEye} from "@phosphor-icons/react";
 import type { Meta, StoryObj } from "@storybook/react";
 
-import {Button} from "./Button";
+import {Button, Icon} from "components";
 import {ButtonSizesNames, ButtonVariantsNames, ButtonViewsNames} from "./constants";
-import {Icon} from "./ButtonIcon";
-import {Hand, HandEye} from "@phosphor-icons/react";
+
 
 const meta: Meta<typeof Button> = {
     title: "Components/Inputs/Button",
@@ -61,9 +61,9 @@ export const Default: Story = {
 export const WithIcon: Story = {
     render: (args) => (
         <Button {...args}>
-            <Icon data={HandEye} side={'left'} />
+            <Icon data={HandEye} />
             Text
-            <Icon data={Hand} side={'right'} />
+            <Icon data={Hand} />
         </Button>
     ),
 };
