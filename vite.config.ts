@@ -12,6 +12,11 @@ export default defineConfig({
         exclude: ['src/**/*.stories.tsx']
       }),
   ],
+  resolve: {
+    alias: {
+      components: path.resolve(__dirname, 'src/components')
+    }
+  },
   server: {
     port: 3333
   },
