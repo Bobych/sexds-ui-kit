@@ -1,11 +1,8 @@
-"use server";
-
 import React from 'react';
-
 import {Icon} from 'components';
-import {LabelSizes, LabelTypes} from "./types";
-import {block} from '../utils/block';
-import {IconProps} from "@phosphor-icons/react";
+import {LabelSizes, LabelTypes} from './types';
+
+import {block} from 'utils/block';
 
 import './Label.scss';
 
@@ -61,34 +58,3 @@ export const Label = React.forwardRef(function Label(
         );
     }
 )
-
-function prepareChildren(children: React.ReactNode) {
-    const childrenArray = React.Children.toArray(children);
-
-    const icons = childrenArray.filter(
-        (child) => React.isValidElement(child) && child.type === Icon
-    );
-
-    const icon = icons[0] as React.ReactElement<IconProps> | undefined;
-
-    const text = childrenArray.filter(
-        (child) =>
-            typeof child === "string" ||
-            (React.isValidElement(child) && child.type !== Icon)
-    );
-
-    return (
-        <>
-            {
-                React.isValidElement(icon) &&
-                React.cloneElement(icon, { className: b('icon') })
-            }
-            {
-                text.length > 0 &&
-                <span className={b('content')}>
-                    {text}
-                </span>
-            }
-        </>
-    );
-}

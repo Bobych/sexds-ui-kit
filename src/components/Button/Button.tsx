@@ -1,14 +1,15 @@
 "use client";
 
 import React from "react";
-
-import type {ButtonSizes, ButtonViews, ButtonVariants} from "./types";
-import {eventBroker} from "../utils/eventBroker";
-import {block} from "../utils/block";
 import {Icon} from "components";
+import type {ButtonSizes, ButtonViews, ButtonVariants} from "./types";
+
+import {eventBroker} from "utils/eventBroker";
+import {block} from "utils/block";
 
 import "./Button.scss";
 
+const b = block('button');
 
 export interface ButtonCommonProps {
     variant?: ButtonVariants,
@@ -53,6 +54,7 @@ export const Button = React.forwardRef(function Button(
         disabled = false,
         children,
         extraProps,
+        onClickCapture,
         ...rest
     } = props;
 
@@ -68,11 +70,11 @@ export const Button = React.forwardRef(function Button(
                 },
             });
 
-            if (props.onClickCapture) {
-                props.onClickCapture(event);
+            if (onClickCapture) {
+                onClickCapture(event);
             }
         },
-        [view, props.onClickCapture],
+        [view, onClickCapture],
     );
 
     const commonProps = {
@@ -115,8 +117,6 @@ export const Button = React.forwardRef(function Button(
         </button>
     );
 });
-
-const b = block('button');
 
 function prepareChildren(children: React.ReactNode) {
     const childrenArray = React.Children.toArray(children);

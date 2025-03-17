@@ -1,9 +1,7 @@
 "use client";
 
 import React from "react";
-
 import type {ThemeType} from "./types";
-import {DEFAULT_THEME} from "./constants";
+import {DefaultTheme} from "./constants";
 
-
-export const ThemeContext = React.createContext<ThemeType>(DEFAULT_THEME);
+export const ThemeContext = React.createContext<ThemeType>(DefaultTheme);

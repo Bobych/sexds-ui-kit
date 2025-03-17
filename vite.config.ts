@@ -14,7 +14,8 @@ export default defineConfig({
   ],
   resolve: {
     alias: {
-      components: path.resolve(__dirname, 'src/components')
+      "components": path.resolve(__dirname, 'src/components'),
+      "utils": path.resolve(__dirname, 'src/components/utils/*')
     }
   },
   server: {
