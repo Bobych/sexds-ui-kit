@@ -46,7 +46,7 @@ export const Active: Story = {
 export const WithIcon: Story = {
     render: (args) => (
         <Label {...args}>
-            <Icon data={MapPin} />
+            <Icon data={MapPin} weight='duotone' />
             Дом
         </Label>
     ),

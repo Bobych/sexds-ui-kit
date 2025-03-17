@@ -1,5 +1,5 @@
 .label {
-  display: flex;
+  display: inline-flex;
   align-items: center;
   gap: var(--size-0-5);
 
@@ -36,7 +36,7 @@
     }
   }
 
-  &__icon {
+  .icon {
     color: var(--label-icon-color);
   }
 
