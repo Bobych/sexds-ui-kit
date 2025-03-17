@@ -8,17 +8,12 @@ import './Label.scss';
 
 const b = block('label');
 
-interface LabelCommonProps {
+interface LabelProps
+    extends React.LabelHTMLAttributes<HTMLLabelElement> {
     type?: LabelTypes;
     size?: LabelSizes;
     icon?: React.ElementType;
     children?: React.ReactNode;
-}
-
-interface LabelProps
-    extends LabelCommonProps,
-        React.LabelHTMLAttributes<HTMLSpanElement> {
-    component?: never;
     extraProps?: React.LabelHTMLAttributes<HTMLLabelElement>;
 }
 
@@ -26,6 +21,8 @@ export const Label = React.forwardRef(function Label(
         props: LabelProps,
         ref: React.Ref<HTMLLabelElement>
     ) {
+        checkProps(props);
+
         const {
             type = 'active',
             size = 's',
@@ -58,3 +55,9 @@ export const Label = React.forwardRef(function Label(
         );
     }
 )
+
+function checkProps({children}: LabelProps) {
+    if (typeof children !== 'string') {
+        console.warn('Use element of type "string" as children in component.');
+    }
+}
