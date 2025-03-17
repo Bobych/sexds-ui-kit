@@ -30,7 +30,7 @@ type Story = StoryObj<typeof Label>;
 export const Default: Story = {
     args: {
         children: "Label",
-        size: "m",
+        size: "s",
         type: "default"
     },
 };
@@ -52,7 +52,7 @@ export const WithIcon: Story = {
     ),
 };
 
-export const ExtraLarge: Story = {
+export const Large: Story = {
     args: {
         children: "Label",
         size: "l",

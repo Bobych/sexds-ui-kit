@@ -14,6 +14,7 @@ const b = block('label');
 interface LabelCommonProps {
     type?: LabelTypes;
     size?: LabelSizes;
+    icon?: React.ElementType;
     children?: React.ReactNode;
 }
 
@@ -31,6 +32,7 @@ export const Label = React.forwardRef(function Label(
         const {
             type = 'active',
             size = 's',
+            icon,
             children,
             extraProps,
             ...rest
@@ -53,7 +55,8 @@ export const Label = React.forwardRef(function Label(
                 {...commonProps}
                 ref={ref as React.Ref<HTMLLabelElement>}
             >
-                {prepareChildren(children)}
+                {icon && <Icon data={icon} />}
+                {children}
             </label>
         );
     }
