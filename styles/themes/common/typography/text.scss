@@ -5,10 +5,13 @@
   --tittle-1-font-size: var(--size-6-0);
   --tittle-2-font-size: var(--size-5-0);
 
+  --tittle-1-line-height: var(--size-7-0);
+  --tittle-2-line-height: var(--size-6-0);
+
   --tittle-1-font: var(--tittle-font-weight) var(--tittle-1-font-size) /
-    var(--font-line-height) var(--tittle-font-family);
+    var(--tittle-1-) var(--tittle-font-family);
   --tittle-2-font: var(--tittle-font-weight) var(--tittle-2-font-size) /
-    var(--font-line-height) var(--tittle-font-family);
+    var(--tittle-2-line-height) var(--tittle-font-family);
 
 
   --body-font-family: var(--font-family-normal);
@@ -18,12 +21,16 @@
   --body-2-font-size: var(--size-4-0);
   --body-3-font-size: var(--size-3-5);
 
+  --body-1-line-height: var(--size-6-0);
+  --body-2-line-height: var(--size-5-0);
+  --body-3-line-height: var(--size-4-5);
+
   --body-1-font: var(--body-font-weight) var(--body-1-font-size) /
-    var(--font-line-height) var(--body-font-family);
+    var(--body-1-line-height) var(--body-font-family);
   --body-2-font: var(--body-font-weight) var(--body-2-font-size) /
-    var(--font-line-height) var(--body-font-family);
+    var(--body-2-line-height) var(--body-font-family);
   --body-3-font: var(--body-font-weight) var(--body-3-font-size) /
-    var(--font-line-height) var(--body-font-family);
+    var(--body-3-line-height) var(--body-font-family);
 
 
   --caption-font-family: var(--font-family-normal);
@@ -32,8 +39,11 @@
   --caption-1-font-size: var(--size-3-0);
   --caption-2-font-size: var(--size-2-5);
 
+  --caption-1-line-height: var(--size-4-0);
+  --caption-2-line-height: var(--size-3-0);
+
   --caption-1-font: var(--caption-font-weight) var(--caption-1-font-size) /
-    var(--font-line-height) var(--caption-font-family);
+    var(--caption-1-line-height) var(--caption-font-family);
   --caption-2-font: var(--caption-font-weight) var(--caption-2-font-size) /
-    var(--font-line-height) var(--caption-font-family);
+    var(--caption-2-line-height) var(--caption-font-family);
 }

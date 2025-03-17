@@ -3,6 +3,8 @@
 import React from 'react';
 import {IconProps} from "@phosphor-icons/react";
 
+import './Icon.scss';
+
 interface IconComponentProps extends IconProps {
     data: React.ElementType;
 }
@@ -15,7 +17,7 @@ export const Icon = React.forwardRef<HTMLSpanElement, IconComponentProps>(
      }, ref) => {
 
         return (
-            <span ref={ref}>
+            <span className='icon' ref={ref}>
                 <IconComponent
                     weight={weight}
                     {...rest}
