@@ -1,1 +1,2 @@
-export const LabelSizesNames = ['xs', 's', 'm', 'l', 'xl'] as const;
+export const LabelSizesNames = ['s', 'm', 'l'] as const;
+export const LabelTypesNames = ['default', 'active'] as const;

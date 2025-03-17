@@ -3,13 +3,16 @@
 import React from 'react';
 
 import {Icon} from 'components';
-import {LabelSizes} from "./types";
+import {LabelSizes, LabelTypes} from "./types";
 import {block} from '../utils/block';
 import {IconProps} from "@phosphor-icons/react";
+
+import './Label.scss';
 
 const b = block('label');
 
 interface LabelCommonProps {
+    type?: LabelTypes;
     size?: LabelSizes;
     children?: React.ReactNode;
 }
@@ -23,10 +26,11 @@ interface LabelProps
 
 export const Label = React.forwardRef(function Label(
         props: LabelProps,
-        ref: React.Ref<HTMLSpanElement>
+        ref: React.Ref<HTMLLabelElement>
     ) {
         const {
-            size = 'm',
+            type = 'active',
+            size = 's',
             children,
             extraProps,
             ...rest
@@ -35,6 +39,7 @@ export const Label = React.forwardRef(function Label(
         const commonProps = {
             className: b(
                 {
+                    type: type,
                     size: size
                 },
                 rest.className
@@ -42,14 +47,14 @@ export const Label = React.forwardRef(function Label(
         }
 
         return (
-            <span
+            <label
                 {...(rest as Pick<typeof props, keyof typeof rest>)}
                 {...(extraProps as (typeof props)['extraProps'])}
                 {...commonProps}
                 ref={ref as React.Ref<HTMLLabelElement>}
             >
                 {prepareChildren(children)}
-            </span>
+            </label>
         );
     }
 )

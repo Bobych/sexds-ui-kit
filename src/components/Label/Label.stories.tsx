@@ -1,8 +1,8 @@
-import {Question} from "@phosphor-icons/react";
+import {MapPin} from "@phosphor-icons/react";
 import type { Meta, StoryObj } from "@storybook/react";
 
 import {Label, Icon} from "components";
-import {LabelSizesNames} from "./constants";
+import {LabelSizesNames, LabelTypesNames} from "./constants";
 
 
 const meta: Meta<typeof Label> = {
@@ -12,6 +12,10 @@ const meta: Meta<typeof Label> = {
         size: {
             control: "select",
             options: LabelSizesNames,
+        },
+        type: {
+            control: "select",
+            options: LabelTypesNames,
         },
         children: {
             control: "text",
@@ -27,14 +31,23 @@ export const Default: Story = {
     args: {
         children: "Label",
         size: "m",
+        type: "default"
+    },
+};
+
+export const Active: Story = {
+    args: {
+        children: "Label",
+        size: "s",
+        type: "active"
     },
 };
 
 export const WithIcon: Story = {
     render: (args) => (
         <Label {...args}>
-            <Icon data={Question} />
-            Label
+            <Icon data={MapPin} />
+            Дом
         </Label>
     ),
 };
@@ -42,6 +55,7 @@ export const WithIcon: Story = {
 export const ExtraLarge: Story = {
     args: {
         children: "Label",
-        size: "xl",
+        size: "l",
+        type: "default"
     },
 };
