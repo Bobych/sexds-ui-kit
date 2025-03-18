@@ -17,8 +17,8 @@ export interface ButtonCommonProps {
     size?: ButtonSizes,
     loading?: boolean,
     disabled?: boolean,
-    leftIcon?: React.ElementType,
-    rightIcon?: React.ElementType,
+    leftIcon?: React.ReactNode,
+    rightIcon?: React.ReactNode,
     children?: React.ReactNode
 }
 
@@ -107,9 +107,9 @@ export const Button = React.forwardRef(function Button(
                     rel={props.target === '_blank' && !rest.rel ? 'noopener noreferrer' : rest.rel}
                     aria-disabled={disabled ?? undefined}
                 >
-                    {leftIcon && <Icon data={leftIcon}/>}
+                    {leftIcon && <Icon icon={leftIcon}/>}
                     <span className={b('content')}>{children}</span>
-                    {rightIcon && <Icon data={rightIcon}/>}
+                    {rightIcon && <Icon icon={rightIcon}/>}
                 </a>
             );
         }
@@ -121,9 +121,9 @@ export const Button = React.forwardRef(function Button(
                 ref={ref as React.Ref<HTMLButtonElement>}
                 disabled={disabled}
             >
-                {leftIcon && <Icon data={leftIcon}/>}
+                {leftIcon && <Icon icon={leftIcon}/>}
                 <span className={b('content')}>{children}</span>
-                {rightIcon && <Icon data={rightIcon}/>}
+                {rightIcon && <Icon icon={rightIcon} />}
             </button>
         );
     }

@@ -1,0 +1,85 @@
+.lable {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font: var(--lable-font);
+  padding: var(--lable-padding-x) var(--lable-padding-y);
+  gap: var(--lable-gap);
+  background-color: var(--lable-background-color);
+  color: var(--lable-color);
+  border-radius: var(--size-1-5);
+
+  &:hover {
+    background-color: var(--lable-background-color-hover);
+  }
+
+  &_type {
+    &_default {
+      --lable-background-color: var(--surface-standart-transluent-l6);
+      --lable-background-color-hover: var(--surface-standart-transluent-l5);
+      --lable-color: var(--text-standart-transluent-a);
+    }
+    &_misc {
+      --lable-background-color: var(--surface-system-misc-light);
+      --lable-background-color-hover: var(--surface-system-misc-light-contrast);
+      --lable-color: var(--text-system-misc-h1);
+    }
+    &_danger {
+      --lable-background-color: var(--surface-system-danger-light);
+      --lable-background-color-hover: var(--surface-system-danger-light-contrast);
+      --lable-color: var(--text-system-danger-h1);
+    }
+    &_warning {
+      --lable-background-color: var(--surface-system-warning-light);
+      --lable-background-color-hover: var(--surface-system-warning-light-contrast);
+      --lable-color: var(--text-system-warning-h1);
+    }
+    &_success {
+      --lable-background-color: var(--surface-system-success-light);
+      --lable-background-color-hover: var(--surface-system-success-light-contrast);
+      --lable-color: var(--text-system-success-h1);
+    }
+    &_info {
+      --lable-background-color: var(--surface-system-info-light);
+      --lable-background-color-hover: var(--surface-system-info-light-contrast);
+      --lable-color: var(--text-system-info-h1);
+    }
+    &_announce {
+      --lable-background-color: var(--surface-system-moment-light);
+      --lable-background-color-hover: var(--surface-system-moment-light-contrast);
+      --lable-color: var(--text-system-moment-h1);
+    }
+    &_invert {
+      --lable-background-color: var(--surface-invert-transluent-l6);
+      --lable-background-color-hover: var(--surface-invert-transluent-l5);
+      --lable-color: var(--text-invert-a);
+    }
+  }
+
+  &_size {
+    &_s {
+      --lable-font: var(--caption-2-font);
+      --lable-padding-x: var(--size-0-5);
+      --lable-padding-y: var(--size-2-0);
+      --lable-gap: var(--size-1-5);
+    }
+    &_m {
+      --lable-font: var(--body-3-font);
+      --lable-padding-x: var(--size-0-5);
+      --lable-padding-y: var(--size-2-0);
+      --lable-gap: var(--size-1-5);
+    }
+    &_l {
+      --lable-font: var(--body-3-font);
+      --lable-padding-x: var(--size-1-5);
+      --lable-padding-y: var(--size-4-0);
+      --lable-gap: var(--size-1-5);
+    }
+    &_xl {
+      --lable-font: var(--body-3-font);
+      --lable-padding-x: var(--size-3-0);
+      --lable-padding-y: var(--size-5-0);
+      --lable-gap: var(--size-1-5);
+    }
+  }
+}
