@@ -1,6 +1,6 @@
-'use client';
+"use client";
 
-import * as React from 'react';
+import React from 'react';
 
 import {eventBroker} from './EventBroker';
 import type {EventBrokerSubscription} from './EventBroker';

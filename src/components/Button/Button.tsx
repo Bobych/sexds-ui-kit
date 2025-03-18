@@ -1,14 +1,15 @@
 "use client";
 
 import React from "react";
-
-import type {ButtonSizes, ButtonViews, ButtonVariants} from "./types";
-import {eventBroker} from "../utils/eventBroker";
-import {block} from "../utils/block";
 import {Icon} from "components";
+import type {ButtonSizes, ButtonViews, ButtonVariants} from "./types";
+
+import {eventBroker} from "utils/eventBroker";
+import {block} from "utils/block";
 
 import "./Button.scss";
 
+const b = block('button');
 
 export interface ButtonCommonProps {
     variant?: ButtonVariants,
@@ -16,6 +17,8 @@ export interface ButtonCommonProps {
     size?: ButtonSizes,
     loading?: boolean,
     disabled?: boolean,
+    leftIcon?: React.ElementType,
+    rightIcon?: React.ElementType,
     children?: React.ReactNode
 }
 
@@ -40,111 +43,94 @@ type ButtonProps =
     | ButtonLinkProps;
 
 export const Button = React.forwardRef(function Button(
-    props: ButtonProps,
-    ref:
-        | React.Ref<HTMLButtonElement>
-        | React.Ref<HTMLAnchorElement>
-) {
-    const {
-        variant = 'default',
-        view = 'default',
-        size = 'm',
-        loading = false,
-        disabled = false,
-        children,
-        extraProps,
-        ...rest
-    } = props;
+        props: ButtonProps,
+        ref:
+            | React.Ref<HTMLButtonElement>
+            | React.Ref<HTMLAnchorElement>
+    ) {
+        checkProps(props);
 
-    const handleClickCapture = React.useCallback(
-        (event: React.MouseEvent<HTMLButtonElement> & React.MouseEvent<HTMLAnchorElement>) => {
-            eventBroker.publish({
-                componentId: 'Button',
-                eventId: 'click',
-                domEvent: event,
-                meta: {
-                    content: event.currentTarget.textContent,
-                    view: view,
-                },
-            });
+        const {
+            variant = 'default',
+            view = 'default',
+            size = 'm',
+            loading = false,
+            disabled = false,
+            leftIcon,
+            rightIcon,
+            children,
+            extraProps,
+            onClickCapture,
+            ...rest
+        } = props;
 
-            if (props.onClickCapture) {
-                props.onClickCapture(event);
-            }
-        },
-        [view, props.onClickCapture],
-    );
+        const handleClickCapture = React.useCallback(
+            (event: React.MouseEvent<HTMLButtonElement> & React.MouseEvent<HTMLAnchorElement>) => {
+                eventBroker.publish({
+                    componentId: 'Button',
+                    eventId: 'click',
+                    domEvent: event,
+                    meta: {
+                        content: event.currentTarget.textContent,
+                        view: view,
+                    },
+                });
 
-    const commonProps = {
-        onClickCapture: handleClickCapture,
-        className: b(
-            {
-                variant: variant,
-                view: view,
-                size: size,
-                loading: loading,
-                disabled: disabled,
+                if (onClickCapture) {
+                    onClickCapture(event);
+                }
             },
-            rest.className
-        )
-    };
+            [view, onClickCapture],
+        );
 
-    if (props.href !== undefined) {
+        const commonProps = {
+            onClickCapture: handleClickCapture,
+            className: b(
+                {
+                    variant: variant,
+                    view: view,
+                    size: size,
+                    loading: loading,
+                    disabled: disabled,
+                },
+                rest.className
+            )
+        };
+
+        if (props.href !== undefined) {
+            return (
+                <a
+                    {...(rest as Pick<typeof props, keyof typeof rest>)}
+                    {...(extraProps as (typeof props)['extraProps'])}
+                    {...commonProps}
+                    ref={ref as React.Ref<HTMLAnchorElement>}
+                    rel={props.target === '_blank' && !rest.rel ? 'noopener noreferrer' : rest.rel}
+                    aria-disabled={disabled ?? undefined}
+                >
+                    {leftIcon && <Icon data={leftIcon}/>}
+                    <span className={b('content')}>{children}</span>
+                    {rightIcon && <Icon data={rightIcon}/>}
+                </a>
+            );
+        }
+
         return (
-            <a
+            <button
                 {...(rest as Pick<typeof props, keyof typeof rest>)}
-                {...(extraProps as (typeof props)['extraProps'])}
                 {...commonProps}
-                ref={ref as React.Ref<HTMLAnchorElement>}
-                rel={props.target === '_blank' && !rest.rel ? 'noopener noreferrer' : rest.rel}
-                aria-disabled={disabled ?? undefined}
+                ref={ref as React.Ref<HTMLButtonElement>}
+                disabled={disabled}
             >
-                {prepareChildren(children)}
-            </a>
+                {leftIcon && <Icon data={leftIcon}/>}
+                <span className={b('content')}>{children}</span>
+                {rightIcon && <Icon data={rightIcon}/>}
+            </button>
         );
     }
+);
 
-    return (
-        <button
-            {...(rest as Pick<typeof props, keyof typeof rest>)}
-            {...commonProps}
-            ref={ref as React.Ref<HTMLButtonElement>}
-            disabled={disabled}
-        >
-            {prepareChildren(children)}
-        </button>
-    );
-});
-
-const b = block('button');
-
-function prepareChildren(children: React.ReactNode) {
-    const childrenArray = React.Children.toArray(children);
-
-    const icons = childrenArray.filter(
-        (child) => React.isValidElement(child) && child.type === Icon
-    );
-
-    const leftIcon = icons[0];
-    const rightIcon = icons[1];
-
-    const text = childrenArray.filter(
-        (child) =>
-            typeof child === "string" ||
-            (React.isValidElement(child) && child.type !== Icon)
-    );
-
-    return (
-        <>
-            {
-                React.isValidElement(leftIcon) &&
-                React.cloneElement(leftIcon)
-            }
-            {text.length > 0 && <span className={b('content')}>{text}</span>}
-            {
-                React.isValidElement(rightIcon) &&
-                React.cloneElement(rightIcon)
-            }
-        </>
-    );
+function checkProps({children}: ButtonProps) {
+    if (typeof children !== 'string') {
+        console.warn('Use element of type "string" as children in component.');
+    }
 }

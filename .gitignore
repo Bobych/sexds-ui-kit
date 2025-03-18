@@ -7,4 +7,6 @@ dist
 .env*
 
 *.tsbuildinfo
-next-env.d.ts
+
+app
+index.html

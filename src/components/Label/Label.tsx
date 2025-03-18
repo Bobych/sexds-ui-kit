@@ -1,26 +1,19 @@
-"use server";
-
 import React from 'react';
-
 import {Icon} from 'components';
-import {LabelSizes, LabelTypes} from "./types";
-import {block} from '../utils/block';
-import {IconProps} from "@phosphor-icons/react";
+import {LabelSizes, LabelTypes} from './types';
+
+import {block} from 'utils/block';
 
 import './Label.scss';
 
 const b = block('label');
 
-interface LabelCommonProps {
+interface LabelProps
+    extends React.LabelHTMLAttributes<HTMLLabelElement> {
     type?: LabelTypes;
     size?: LabelSizes;
+    icon?: React.ElementType;
     children?: React.ReactNode;
-}
-
-interface LabelProps
-    extends LabelCommonProps,
-        React.LabelHTMLAttributes<HTMLSpanElement> {
-    component?: never;
     extraProps?: React.LabelHTMLAttributes<HTMLLabelElement>;
 }
 
@@ -28,9 +21,12 @@ export const Label = React.forwardRef(function Label(
         props: LabelProps,
         ref: React.Ref<HTMLLabelElement>
     ) {
+        checkProps(props);
+
         const {
             type = 'active',
             size = 's',
+            icon,
             children,
             extraProps,
             ...rest
@@ -53,39 +49,15 @@ export const Label = React.forwardRef(function Label(
                 {...commonProps}
                 ref={ref as React.Ref<HTMLLabelElement>}
             >
-                {prepareChildren(children)}
+                {icon && <Icon data={icon} />}
+                {children}
             </label>
         );
     }
 )
 
-function prepareChildren(children: React.ReactNode) {
-    const childrenArray = React.Children.toArray(children);
-
-    const icons = childrenArray.filter(
-        (child) => React.isValidElement(child) && child.type === Icon
-    );
-
-    const icon = icons[0] as React.ReactElement<IconProps> | undefined;
-
-    const text = childrenArray.filter(
-        (child) =>
-            typeof child === "string" ||
-            (React.isValidElement(child) && child.type !== Icon)
-    );
-
-    return (
-        <>
-            {
-                React.isValidElement(icon) &&
-                React.cloneElement(icon, { className: b('icon') })
-            }
-            {
-                text.length > 0 &&
-                <span className={b('content')}>
-                    {text}
-                </span>
-            }
-        </>
-    );
+function checkProps({children}: LabelProps) {
+    if (typeof children !== 'string') {
+        console.warn('Use element of type "string" as children in component.');
+    }
 }

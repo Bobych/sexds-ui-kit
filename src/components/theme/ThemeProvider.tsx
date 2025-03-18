@@ -1,16 +1,13 @@
 "use client";
 
 import React from 'react';
-
-import {
-    DEFAULT_THEME,
-} from "./constants";
+import {DefaultTheme} from "./constants";
 import type {ThemeType} from "./types";
+
 import {ThemeContext} from "./ThemeContext";
 
-
 export function ThemeProvider({
-    theme = DEFAULT_THEME,
+    theme = DefaultTheme,
     children
 }: {
     theme?: ThemeType,
