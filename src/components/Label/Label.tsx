@@ -12,7 +12,7 @@ interface LabelProps
     extends React.LabelHTMLAttributes<HTMLLabelElement> {
     type?: LabelTypes;
     size?: LabelSizes;
-    icon?: React.ElementType;
+    icon?: React.ReactNode;
     children?: React.ReactNode;
     extraProps?: React.LabelHTMLAttributes<HTMLLabelElement>;
 }
@@ -49,7 +49,7 @@ export const Label = React.forwardRef(function Label(
                 {...commonProps}
                 ref={ref as React.Ref<HTMLLabelElement>}
             >
-                {icon && <Icon data={icon} />}
+                {icon && <Icon icon={icon} />}
                 {children}
             </label>
         );

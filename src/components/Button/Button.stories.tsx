@@ -1,5 +1,5 @@
 import { action } from '@storybook/addon-actions';
-import {Hand, HandEye} from "@phosphor-icons/react";
+import {Hand, HandEye} from "@phosphor-icons/react/dist/ssr";
 import type { Meta, StoryObj } from "@storybook/react";
 
 import {Button, Icon} from "components";
@@ -61,9 +61,9 @@ export const Default: Story = {
 export const WithIcon: Story = {
     render: (args) => (
         <Button {...args}>
-            <Icon data={HandEye} />
+            <Icon icon={<HandEye />} />
             Text
-            <Icon data={Hand} />
+            <Icon icon={<Hand />} />
         </Button>
     ),
 };
