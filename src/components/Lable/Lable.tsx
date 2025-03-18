@@ -8,7 +8,7 @@ import './Lable.scss';
 
 const b = block('lable');
 
-interface LableProps
+export interface LableProps
     extends React.LabelHTMLAttributes<HTMLLabelElement> {
     type?: LableTypes;
     size?: LableSizes;

@@ -1,7 +1,7 @@
 import {MapPin} from "@phosphor-icons/react";
 import type { Meta, StoryObj } from "@storybook/react";
 
-import {Label} from "components";
+import {Label, Lable} from "components";
 import {LabelSizesNames, LabelTypesNames} from "./constants";
 
 const meta: Meta<typeof Label> = {
@@ -59,4 +59,34 @@ export const Large: Story = {
         size: "l",
         type: "default"
     },
+};
+
+export const WithLableString: Story = {
+    render: (args) => (
+        <Label
+            icon={<MapPin />}
+            lable='Свой'
+            {...args}
+        >
+            Дом
+        </Label>
+    ),
+};
+
+export const WithLableComponent: Story = {
+    render: (args) => (
+        <Label
+            icon={<MapPin />}
+            lable={
+                <Lable
+                    type='announce'
+                >
+                    Свой
+                </Lable>
+            }
+            {...args}
+        >
+            Дом
+        </Label>
+    ),
 };

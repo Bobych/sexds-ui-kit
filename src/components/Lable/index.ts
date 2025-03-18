@@ -1,1 +1,1 @@
-export {Lable} from './Lable';
+export * from './Lable';
