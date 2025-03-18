@@ -6,6 +6,8 @@ export interface ButtonCommonProps {
     size?: ButtonSizes;
     loading?: boolean;
     disabled?: boolean;
+    leftIcon?: React.ReactNode;
+    rightIcon?: React.ReactNode;
     children?: React.ReactNode;
 }
 interface ButtonButtonProps extends ButtonCommonProps, Omit<React.ButtonHTMLAttributes<HTMLButtonElement>, 'disabled'> {
