@@ -1,1 +1,1 @@
-export * from './Lable';
+export {Lable, type LableProps} from './Lable';
