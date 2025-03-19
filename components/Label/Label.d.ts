@@ -1,6 +1,6 @@
 import { default as React } from '../../../node_modules/react';
 import { LabelSizes, LabelTypes } from './types';
-interface LabelProps extends React.LabelHTMLAttributes<HTMLLabelElement> {
+export interface LabelProps extends React.LabelHTMLAttributes<HTMLLabelElement> {
     type?: LabelTypes;
     size?: LabelSizes;
     icon?: React.ReactNode;
@@ -9,4 +9,3 @@ interface LabelProps extends React.LabelHTMLAttributes<HTMLLabelElement> {
     extraProps?: React.LabelHTMLAttributes<HTMLLabelElement>;
 }
 export declare const Label: React.ForwardRefExoticComponent<LabelProps & React.RefAttributes<HTMLLabelElement>>;
-export {};
