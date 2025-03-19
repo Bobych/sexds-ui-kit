@@ -1,13 +1,13 @@
 import React from 'react';
 import { Meta, StoryFn } from '@storybook/react';
+
+import {Diamond, QrCode} from "@phosphor-icons/react/dist/ssr";
 import { Dropdown, DropdownProps } from './Dropdown';
 import { TitleProps } from './Title';
 import { BlockProps } from './Block';
-import {Diamond} from "@phosphor-icons/react/dist/ssr";
-import {QrCode} from "@phosphor-icons/react";
 
 export default {
-    title: 'Components/Dropdown',
+    title: 'Components/Data Display/Dropdown',
     component: Dropdown,
     argTypes: {
         size: {
